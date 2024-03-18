@@ -14,7 +14,7 @@ The files in this repository are structured to facilitate organization and utili
 #### Images
 The images can be downloaded from the Cancer Imaging Archive (TCIA) at the following link: https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=23691656
 #### Segmentations
-The segmentations are available on Zenodo, accessible through this link: ....
+The segmentations are available on Zenodo, accessible through the DOI: 10.5281/zenodo.10718469
 
 ### ProstateZones Dataset Folder Structure:
 
@@ -23,19 +23,19 @@ The 'data_to_folders' Python script arranges the images and their corresponding 
 
 - **Images**
   - ProstateX-0000
-    - adc-0000
-    - cor-0000
-    - dwi-0000
-    - hbv-0000
-    - sag-0000
+    - _adc-0000_
+    - _cor-0000_
+    - _dwi-0000_
+    - _hbv-0000_
+    - _sag-0000_
     - tra-0000
   - ProstateX-0007
   - ...
 
 - **Train**
   - ProstateX-0000
-    - adc-0000
-    - hbv-0000
+    - _adc-0000_
+    - _hbv-0000_
     - tra-0000
     - Seg-0000.nrrd
   - ProstateX-0008
@@ -43,8 +43,8 @@ The 'data_to_folders' Python script arranges the images and their corresponding 
 
 - **Validate**
   - ProstateX-0007
-    - adc-0007
-    - hbv-0007
+    - _adc-0007_
+    - _hbv-0007_
     - tra-0007
     - Seg-0007.nrrd
   - ProstateX-0010
@@ -52,8 +52,8 @@ The 'data_to_folders' Python script arranges the images and their corresponding 
 
 - **Test**
   - ProstateX-0015
-    - adc-0015
-    - hbv-0015
+    - _adc-0015_
+    - _hbv-0015_
     - tra-0015
     - Seg-0015_R1.nrrd
     - Seg-0015_R2.nrrd
@@ -70,7 +70,7 @@ To run the evaluation workflow, you'll need Hero, a software tool for medical im
 To set up the data for running the workflow in Hero, watch the provided videos on loading data and batching. These videos will guide you through the process of configuring Hero to work with the ProstateZones dataset.
 
 
-## ...
+## ... Additional Information ...
 Dataset paper:
 
 For more information about the dataset, see the DataDescriptor publication:
