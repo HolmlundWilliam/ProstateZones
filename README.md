@@ -11,8 +11,10 @@ The files in this repository are structured to facilitate organization and utili
 
 ### Download ..
 
-Images: The images can be downloaded from the Cancer Imaging Archive (TCIA) at the following link: https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=23691656
-Segmentations: The segmentations are available on Zenodo, accessible through this link: ....
+#### Images
+The images can be downloaded from the Cancer Imaging Archive (TCIA) at the following link: https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=23691656
+#### Segmentations
+The segmentations are available on Zenodo, accessible through this link: ....
 
 ### ProstateZones Dataset Folder Structure:
 
