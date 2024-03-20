@@ -15,10 +15,29 @@ The images can be downloaded from the Cancer Imaging Archive (TCIA) at the follo
 #### Segmentations
 The segmentations are available on Zenodo, accessible through the DOI: 10.5281/zenodo.10718469
 
-### ProstateZones Dataset Folder Structure:
+### Structure Data
+To pair the images and segmentations, and divide into Train/Validate/Test folders, run the followig lines of code:
 
-The downloaded folder containing the PROSTATEx data includes a bunch of images. To extract the ones used for the manual delineations, enter the path to the downloaded data and run the 'data_to_folders.py' script.
-This script will create copies and arrange the images and their corresponding segmentations for easier usage and management, according to the following structure:
+```ruby
+pip install > requirements.txt
+```
+
+```ruby
+python data_to_folders.py --image_folder 'path/to/PROSTATEx_image_folder' --segmentation_folder 'path/to/PorstateZones_segmentation_folder' --output_folder 'path/to/output_folder' --images T2_Sag T2_Cor DWI ADC HBV
+```
+The above lines of code will extract the Axial T2 weigthed image that was used for the manual delineations from the PROSTATEx data and copy it in a new folder. If any additional sequences are of interest, they can be added through the `--image`-flag.
+Images will be renamed into a more straightforward structure, but still keep the 4-digit patient specifier as in the original PROSTATEx naming convention.:
+
+- tra : Axial T2w
+- sag : Sagittal T2w
+- cor : Coronal T2w
+- dwi : Diffusion Weighted image
+- adc : Apparent Diffusion Coefficient
+- hbv : High B-value image
+
+#### Folder Structure:
+
+After running the above lines of code the data will have the following structure in the output folder.
 
 - **Images**
   - ProstateX-0000
@@ -59,19 +78,8 @@ This script will create copies and arrange the images and their corresponding se
   - ProstateX-0019
   - ...
  
-#### Naming Convention
-All folders/images/segmentations are named according to the PROSTATEx naming convention with the same 4-digit patient specifiers.
+**Note:** _italic_ images are optional in each folder depending on the inputs to the `--image`-flag, although Sagittal and Coronal images will not be included in the Train/Validate/Test folders, which only include images with the same orientation as the segmentations.
 
-Images are named as:
-
-- tra : Axial T2w
-- sag : Sagittal T2w
-- cor : Coronal T2w
-- dwi : Diffusion Weighted image
-- adc : Apparent Diffusion Coefficient
-- hbv : High B-value image
-
-**Note:** The _italic_ images can easily be excluded by slightly modifying the script.
 
 ### Evaluation Workflow
 The evaluation workflow used to analyze the inter-reader variability data is included in this repository.
