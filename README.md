@@ -25,8 +25,8 @@ pip install > requirements.txt
 ```ruby
 python data_to_folders.py --image_folder 'path/to/PROSTATEx_image_folder' --segmentation_folder 'path/to/PorstateZones_segmentation_folder' --output_folder 'path/to/output_folder' --images T2_Sag T2_Cor DWI ADC HBV
 ```
-The above lines of code will extract the Axial T2 weigthed image that was used for the manual delineations from the PROSTATEx data and copy it in a new folder. If any additional sequences are of interest, they can be added through the `--image`-flag.
-Images will be renamed into a more straightforward structure, but still keep the 4-digit patient specifier as in the original PROSTATEx naming convention.:
+The above lines of code will extract the Axial T2 weigthed image that was used for the manual delineations from the PROSTATEx data and copy it to a new folder. If any additional sequences are of interest, they can be added through the `--image`-flag.
+Images will be renamed into a more straightforward structure, while still keeping the 4-digit patient specifier as in the original PROSTATEx naming convention:
 
 - tra : Axial T2w
 - sag : Sagittal T2w
@@ -78,7 +78,7 @@ After running the above lines of code the data will have the following structure
   - ProstateX-0019
   - ...
  
-**Note:** _italic_ images are optional in each folder depending on the inputs to the `--image`-flag, although Sagittal and Coronal images will not be included in the Train/Validate/Test folders, which only include images with the same orientation as the segmentations.
+**Note:** _italic_ images are optional in each folder depending on the inputs to the `--image`-flag, although Sagittal and Coronal images will not be included in the Train/Validate/Test folders, which (without modification) only include images with the same orientation as the segmentations.
 
 
 ### Evaluation Workflow
